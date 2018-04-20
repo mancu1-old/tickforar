@@ -32,5 +32,6 @@ public class ticket {
         i2 = inputNum / 10000 % 10;
         i1 = inputNum / 100000 % 10;
         System.out.println(i1 + " " + i2 + " " + i3 + " " + i4 + " " + i5 + " " + i6);//выводим на экран
+        //ну что?
     }
 }
