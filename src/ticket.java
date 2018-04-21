@@ -15,7 +15,7 @@ public class ticket {
         for (int loop= -1; loop < 0;) {
             start:
             {
-                System.out.println("Введи 6 значное число ");
+                System.out.println("Enter 6-digit number: ");
                 //херата для считывания не по символьно а целыми стоками
                 Scanner in = new Scanner(System.in);
                 //так как мы приводим строку в число нужно быть уверенным что мы не приводим не цифру в число
@@ -25,13 +25,13 @@ public class ticket {
                     inputNum = Integer.parseInt(inputNumString);
                     // проверяем длину
                     if (inputNumString.length() != 6) {
-                        System.out.println("Длина числа не поддерживается");
+                        System.out.println("Number length doesn't support");
                         // если не подходит то завершаем программу
                         break start;
                     }
 
-                } catch (NumberFormatException e) { // суда мы поподем только тогда когда введем не подходящий символ
-                    System.out.println("Дурак зачем не число ввел?");
+                } catch (NumberFormatException ex) { // суда мы поподем только тогда когда введем не подходящий символ
+                    System.out.println("Enter proper number");
                     break start;
                 }
                 i6 = inputNum % 10;
