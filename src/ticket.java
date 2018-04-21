@@ -58,13 +58,13 @@ public class ticket {
                                         lineToSolv = oper(op1) + i1 + oper(op2) + i2 + oper(op3) + i3 + oper(op4) + i4 + oper(op5) + i5 + oper(op6) + i6;
                                         try {
                                             try {
-                                                answerInt  = (Integer) engine.eval(lineToSolv);
+                                                answerInt = (Integer) engine.eval(lineToSolv);
 //                                                System.out.println(answerInt + " целое");
                                                 if (answerInt == 100) {
                                                     System.out.println(lineToSolv + " = 100 = " + answerInt);
                                                 }
-                                            }catch (ClassCastException e) {
-                                                answerDouble  = (double) engine.eval(lineToSolv);
+                                            } catch (ClassCastException e) {
+                                                answerDouble = (double) engine.eval(lineToSolv);
 //                                                System.out.println(answerDouble+ " добл");
                                                 if (answerDouble == 100.0) {
                                                     System.out.println(lineToSolv + " = 100 = " + answerDouble);
@@ -83,7 +83,7 @@ public class ticket {
                     }
                 }
 
-                return;
+                break start;
             }
         }
     }
@@ -100,10 +100,10 @@ public class ticket {
                 return "/";
             case 4:
                 return "*";
-//            case 5:
-//                return "*-";
-//            case 6:
-//                return "/-";
+            case 5:
+                return "*-";
+            case 6:
+                return "/-";
             default:
                 return "";
         }
