@@ -1,7 +1,6 @@
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ticket {
@@ -9,14 +8,15 @@ public class ticket {
     public static void main(String[] args) {
 
         ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("nashorn");
+        ScriptEngine engine = manager.getEngineByName("js");
         // число в строке
         String inputNumString, lineToSolv;
         // вводимое число
-        Double inputNum;
-        Double answer;
+        int inputNum;
+        int answerInt;
+        double answerDouble;
         // разложено на каждый символ
-        Double i1, i2, i3, i4, i5, i6;
+        int i1, i2, i3, i4, i5, i6;
         // бесконечный цикл завершаеn программу только когда получим вкусный результат
         for (int loop = -1; loop < 0; ) {
             start:
@@ -28,7 +28,7 @@ public class ticket {
                 try {
                     // ввод числа в строке (для того чтоб померить длину? например 000001 в виде числа будет длиной 1)
                     inputNumString = in.nextLine();
-                    inputNum = Double.valueOf(inputNumString);
+                    inputNum = Integer.parseInt(inputNumString);
                     // проверяем длину
                     if (inputNumString.length() != 6) {
                         System.out.println("Number length doesn't support");
@@ -50,20 +50,31 @@ public class ticket {
                 System.out.println(i1 + " " + i2 + " " + i3 + " " + i4 + " " + i5 + " " + i6);
                 //ну что? мы все сделали? выходим!
                 for (int op1 = 0; op1 < 3; op1++) {
-                    for (int op2 = 0; op2 < 7; op2++) {
-                        for (int op3 = 0; op3 < 7; op3++) {
-                            for (int op4 = 0; op4 < 7; op4++) {
-                                for (int op5 = 0; op5 < 7; op5++) {
-                                    for (int op6 = 0; op6 < 7; op6++) {
+                    for (int op2 = 0; op2 < 5; op2++) {
+                        for (int op3 = 0; op3 < 5; op3++) {
+                            for (int op4 = 0; op4 < 5; op4++) {
+                                for (int op5 = 0; op5 < 5; op5++) {
+                                    for (int op6 = 0; op6 < 5; op6++) {
                                         lineToSolv = oper(op1) + i1 + oper(op2) + i2 + oper(op3) + i3 + oper(op4) + i4 + oper(op5) + i5 + oper(op6) + i6;
                                         try {
-                                            answer  = (Double) engine.eval(lineToSolv);
-                                            if (answer == 100) {
-                                                System.out.println(lineToSolv + " = " + answer);
+                                            try {
+                                                answerInt  = (Integer) engine.eval(lineToSolv);
+//                                                System.out.println(answerInt + " целое");
+                                                if (answerInt == 100) {
+                                                    System.out.println(lineToSolv + " = 100 = " + answerInt);
+                                                }
+                                            }catch (ClassCastException e) {
+                                                answerDouble  = (double) engine.eval(lineToSolv);
+//                                                System.out.println(answerDouble+ " добл");
+                                                if (answerDouble == 100.0) {
+                                                    System.out.println(lineToSolv + " = 100 = " + answerDouble);
+                                                }
                                             }
+
 
                                         } catch (ScriptException e) {
                                             e.printStackTrace();
+                                            return;
                                         }
                                     }
                                 }
@@ -89,10 +100,10 @@ public class ticket {
                 return "/";
             case 4:
                 return "*";
-            case 5:
-                return "*-";
-            case 6:
-                return "/-";
+//            case 5:
+//                return "*-";
+//            case 6:
+//                return "/-";
             default:
                 return "";
         }
