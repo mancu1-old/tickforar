@@ -11,6 +11,7 @@ public class ticket {
         int inputNum;
         // разложено на каждый символ
         int i1, i2, i3, i4, i5, i6;
+        int op1, op2, op3, op4, op5, op6;
         // бесконечный цикл завершаеn программу только когда получим вкусный результат
         for (int loop= -1; loop < 0;) {
             start:
@@ -43,6 +44,7 @@ public class ticket {
                 //выводим на экран
                 System.out.println(i1 + " " + i2 + " " + i3 + " " + i4 + " " + i5 + " " + i6);
                 //ну что? мы все сделали? выходим!
+
                 return;
             }
         }
