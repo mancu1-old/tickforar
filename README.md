@@ -1,3 +1,1 @@
-# ticket for Artur
-
-## давай учить
+# Maybe here will be normal README
