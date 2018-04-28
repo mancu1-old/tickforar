@@ -31,7 +31,7 @@ public class ticket {
                     inputNum = Integer.parseInt(inputNumString);
                     // проверяем длину
                     if (inputNumString.length() != 6) {
-                        System.out.println("Number length doesn't support");
+                        System.out.println("Number's length doesn't support");
                         // если не подходит то завершаем программу
                         break start;
                     }
@@ -46,10 +46,10 @@ public class ticket {
                 i3 = inputNum / 1000 % 10;
                 i2 = inputNum / 10000 % 10;
                 i1 = inputNum / 100000 % 10;
-                //выводим на экран
+
                 System.out.println(i1 + " " + i2 + " " + i3 + " " + i4 + " " + i5 + " " + i6);
-                //ну что? мы все сделали? выходим!
-                for (int op1 = 0; op1 < 3; op1++) {
+
+                for (int op1 = 0; op1 < 2; op1++) {
                     for (int op2 = 0; op2 < 5; op2++) {
                         for (int op3 = 0; op3 < 5; op3++) {
                             for (int op4 = 0; op4 < 5; op4++) {
@@ -59,15 +59,15 @@ public class ticket {
                                         try {
                                             try {
                                                 answerInt = (Integer) engine.eval(lineToSolv);
-//                                                System.out.println(answerInt + " целое");
+
                                                 if (answerInt == 100) {
-                                                    System.out.println(lineToSolv + " = 100 = " + answerInt);
+                                                    System.out.println(lineToSolv + " = " + answerInt);
                                                 }
                                             } catch (ClassCastException e) {
                                                 answerDouble = (double) engine.eval(lineToSolv);
-//                                                System.out.println(answerDouble+ " добл");
+
                                                 if (answerDouble == 100.0) {
-                                                    System.out.println(lineToSolv + " = 100 = " + answerDouble);
+                                                    System.out.println(lineToSolv + " = " + answerDouble);
                                                 }
                                             }
 
