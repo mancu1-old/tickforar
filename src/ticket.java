@@ -91,11 +91,11 @@ public class ticket {
     public static String oper(int numOfOper) {
         switch (numOfOper) {
             case 0:
-                return "";
-            case 1:
                 return "+";
-            case 2:
+            case 1:
                 return "-";
+            case 2:
+                return "";
             case 3:
                 return "/";
             case 4:
