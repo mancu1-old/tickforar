@@ -49,12 +49,12 @@ public class ticket {
 
                 System.out.println(i1 + " " + i2 + " " + i3 + " " + i4 + " " + i5 + " " + i6);
 
-                for (int op1 = 0; op1 < 2; op1++) {
-                    for (int op2 = 0; op2 < 5; op2++) {
-                        for (int op3 = 0; op3 < 5; op3++) {
-                            for (int op4 = 0; op4 < 5; op4++) {
-                                for (int op5 = 0; op5 < 5; op5++) {
-                                    for (int op6 = 0; op6 < 5; op6++) {
+                for (int op1 = 0; op1 < 15; op1++) {
+                    for (int op2 = 0; op2 < 15; op2++) {
+                        for (int op3 = 0; op3 < 15; op3++) {
+                            for (int op4 = 0; op4 < 15; op4++) {
+                                for (int op5 = 0; op5 < 15; op5++) {
+                                    for (int op6 = 0; op6 < 15; op6++) {
                                         lineToSolv = oper(op1) + i1 + oper(op2) + i2 + oper(op3) + i3 + oper(op4) + i4 + oper(op5) + i5 + oper(op6) + i6;
                                         try {
                                             try {
@@ -95,15 +95,31 @@ public class ticket {
             case 1:
                 return "-";
             case 2:
-                return "";
-            case 3:
                 return "/";
-            case 4:
+            case 3:
                 return "*";
+            case 4:
+                return "+(";
             case 5:
-                return "*-";
+                return "-(";
             case 6:
-                return "/-";
+                return "/(";
+            case 7:
+                return "*(";
+            case 8:
+                return "(";
+            case 9:
+                return ")";
+            case 10:
+                return ")+";
+            case 11:
+                return ")-";
+            case 12:
+                return ")/";
+            case 13:
+                return ")*";
+            case 14:
+                return "";
             default:
                 return "";
         }
